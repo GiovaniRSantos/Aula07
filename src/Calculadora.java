@@ -2,12 +2,13 @@ import java.util.Scanner;
 
 public class Calculadora {
 
-	
+	static double valor1 = 0;
+	static double valor2 = 0;
 	
 	public static void main(String[] args) {
 
 		Scanner leitor = new Scanner(System.in);
-		double valor1 = 0, valor2 = 0;
+		
 		double soma, subtracao, divisao, multiplicacao;
 		int opcao = 0;
 
@@ -28,9 +29,7 @@ public class Calculadora {
 
 				break;
 			case 2:
-				System.out.println("\n\nRealizando a soma entre " + valor1 + " e " + valor2);
-				double resultadoSoma = somar(valor1, valor2);
-				imprimirResultado( resultadoSoma );
+				processarSoma();
 				break;
 			case 3:
 				System.out.println("\n\nRealizando a subtração entre " + valor1 + " e " + valor2);
@@ -57,6 +56,14 @@ public class Calculadora {
 
 	}
 
+	
+	public static void processarSoma() {
+		System.out.println("\n\nRealizando a soma entre " + valor1 + " e " + valor2);
+		double resultadoSoma = somar(valor1, valor2);
+		imprimirResultado( resultadoSoma );
+	}
+	
+	
 	
 	public static double somar(double valor1, double valor2 ) {
 		return valor1 + valor2;
